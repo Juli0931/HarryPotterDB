@@ -31,8 +31,8 @@ export function Form () {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <div className='usernameDiv'>
+      <form onSubmit={handleSubmit} className='form'>
+        <div className='groupForm'>
           <label htmlFor='username'>Username:</label>
           <input
             type='text'
@@ -43,7 +43,7 @@ export function Form () {
             onChange={handleInputChange}
           />
         </div>
-        <div>
+        <div className='groupForm'>
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
