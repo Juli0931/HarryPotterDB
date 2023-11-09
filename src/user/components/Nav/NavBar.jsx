@@ -1,8 +1,8 @@
-export function NavBar() {
+export function NavBar () {
   return (
-    <nav className="navBar">
+    <nav className='navBar'>
       <h1>Hogwarts Connect</h1>
-      <img src="" alt="" />
+      <img src='' alt='' />
     </nav>
-  );
+  )
 }

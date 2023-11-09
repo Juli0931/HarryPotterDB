@@ -1,62 +1,63 @@
-import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { Button } from "../Button/Button";
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { Button } from '../Button/Button'
+import './Form.css'
 
-export function Form() {
+export function Form () {
   const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-  });
+    username: '',
+    password: ''
+  })
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setFormData({
       ...formData,
-      [name]: value,
-    });
-  };
+      [name]: value
+    })
+  }
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate()
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const { username, password } = formData;
+    event.preventDefault()
+    const { username, password } = formData
 
-    console.log("Username:", username);
-    console.log("Password:", password);
+    console.log('Username:', username)
+    console.log('Password:', password)
 
-    navigate("/dashboard");
-  };
+    navigate('/dashboard')
+  }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className='usernameDiv'>
+          <label htmlFor='username'>Username:</label>
           <input
-            type="text"
-            id="username"
-            name="username"
-            placeholder="Karol"
+            type='text'
+            id='username'
+            name='username'
+            placeholder='Karol'
             value={formData.username}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor='password'>Password:</label>
           <input
-            type="password"
-            id="password"
-            name="password"
+            type='password'
+            id='password'
+            name='password'
             placeholder="Shh, it's a secret!"
             value={formData.password}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <Button labelText="Login" type="submit" />
+          <Button labelText='Log in' type='submit' />
         </div>
       </form>
     </div>
-  );
+  )
 }

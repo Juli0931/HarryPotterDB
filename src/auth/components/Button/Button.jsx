@@ -1,7 +1,9 @@
-export function Button({ labelText, type }) {
+import './Button.css'
+
+export function Button ({ labelText, type }) {
   return (
-    <button className={`${type}-btn`} type="button">
+    <button className={`${type}-btn`} type='button' id='btn'>
       {labelText}
     </button>
-  );
+  )
 }

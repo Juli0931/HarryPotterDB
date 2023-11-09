@@ -1,0 +1,31 @@
+#btn {
+    width: 200px;
+    padding: 12px 32px;
+    margin: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+
+    background-color: rgb(126, 117, 213);
+    border: none;
+    border-radius: 50px;
+    color: rgb(255, 255, 255);
+
+    &:hover {
+        background-color: rgb(73, 63, 164);
+        box-shadow: 0 0 10px rgba(157, 147, 240, 0.8);
+    }
+}
+
+@media screen and (min-width:300px) {
+    #btn {
+        width: 80vw;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    #btn {
+        width: 30vw;
+    }
+}
