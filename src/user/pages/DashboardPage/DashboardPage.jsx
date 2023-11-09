@@ -1,5 +1,6 @@
+import { Filter } from "../../components/Filter/Filter";
 export function DashboardPage() {
     return(
-        <h1>Hehe, this is the DashboardPage. For now.</h1>
+        <Filter></Filter>
     )
 }

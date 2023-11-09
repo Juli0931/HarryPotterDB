@@ -1,10 +1,4 @@
-const filterInput = document.getElementById('filterInput');
-
-filterInput.addEventListener('change', function () {
-  const selectedValue = filterInput.value; 
-
-  const apiUrl = `https://api.potterdb.com/v1/${selectedValue}`;
-
+export function fetchData() {
   fetch(apiUrl)
     .then(response => {
       if (!response.ok) {
@@ -18,4 +12,4 @@ filterInput.addEventListener('change', function () {
     .catch(error => {
       console.error(`Error al obtener datos de ${selectedValue}:`, error);
     });
-});
+}
