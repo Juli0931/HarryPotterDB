@@ -1,4 +1,4 @@
-import { Filter } from '../../components/Filter/Filter'
+import { Filter } from '../../components'
 export function DashboardPage () {
   return (
     <Filter />

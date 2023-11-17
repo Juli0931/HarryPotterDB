@@ -1,9 +1,9 @@
-<<<<<<< HEAD
-export async function fetchData(endpoint, textInput) {
-  const apiUrl = `https://api.potterdb.com/v1/${endpoint}`;
+export async function fetchData(endpoint, query) {
+  let apiUrl = `https://api.potterdb.com/v1/${endpoint}`;
 
-  if (textInput) {
-    apiUrl += `?filter[name_cont]=${textInput}`;
+  if (query) {
+    apiUrl += `?filter[name_cont]=${query}`;
+    console.log(`Este es el query: ${query}`);
   }
 
   try {
@@ -18,21 +18,4 @@ export async function fetchData(endpoint, textInput) {
     console.error(`Error al obtener datos de ${endpoint}:`, error);
     throw error;
   }
-=======
-export function fetchData ({ endpoint, query }) {
-  const apiUrl = `https://api.potterdb.com/v1/${endpoint}?filter[name_cont]=${query}`
-  fetch(apiUrl)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`Error al hacer la solicitud a ${endpoint}`)
-      }
-      return response.json()
-    })
-    .then(data => {
-      console.log(`Datos de ${endpoint}:`, data)
-    })
-    .catch(error => {
-      console.error(`Error al obtener datos de ${endpoint}:`, error)
-    })
->>>>>>> ca443adcec126321bbe55ca5ba74a30c60769739
 }
