@@ -33,11 +33,5 @@
             font-size: 60px;
             line-height: normal;
         }
-
-        & .form{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     }
 }

@@ -1,6 +1,6 @@
 input {
     border: 1px solid rgba(255, 255, 255);
-    border-radius: 3px;
+    border-radius: 50px;
     border-color: rgba(255, 255, 255, 0.6);
     background-color: rgba(73, 73, 73, 0.3);
 
@@ -12,15 +12,21 @@ input {
         transition: 90ms;
         transition-timing-function: ease-in;
     }
-
 }
+
+.groupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 @media screen and (min-width:300px) {
     .LoginPage {
         & input {
             margin: 5px;
             padding: 8px 10px;
-            width: 80%;
+            width: 80vw;
         }
     }
 }
@@ -30,7 +36,7 @@ input {
         & input {
             margin: 20px;
             padding: 13px;
-            width: 30%;
+            width: 30vw;
         }
     }
 }
