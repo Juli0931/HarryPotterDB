@@ -33,7 +33,7 @@ export function Form () {
     <div>
       <form onSubmit={handleSubmit} className='form'>
         <div className='groupForm'>
-          <label htmlFor='username'>Username:</label>
+          <label htmlFor='username'>Username</label>
           <input
             type='text'
             id='username'
@@ -44,7 +44,7 @@ export function Form () {
           />
         </div>
         <div className='groupForm'>
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
             id='password'
