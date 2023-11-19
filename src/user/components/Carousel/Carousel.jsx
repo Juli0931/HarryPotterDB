@@ -36,43 +36,43 @@
 //   )
 // }
 
-import { useState, useEffect } from "react";
-import MoviesCarousel from "../../../assets/MoviesCarousel.jpg";
-import BooksCarousel from "../../../assets/BooksCarousel.jpg";
-import "./Carousel.css";
+import { useState, useEffect } from 'react'
+import MoviesCarousel from '../../../assets/MoviesCarousel.jpg'
+import BooksCarousel from '../../../assets/BooksCarousel.jpg'
+import HouseCarousel from '../../../assets/HouseCarousel.jpg'
+import './Carousel.css'
 
-export function Carousel() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+export function Carousel () {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-  const BannerImg = [MoviesCarousel, BooksCarousel];
+  const BannerImg = [MoviesCarousel, BooksCarousel, HouseCarousel]
 
   const goToSlide = (index) => {
-    setCurrentImageIndex(index);
-  };
+    setCurrentImageIndex(index)
+  }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BannerImg.length);
-    }, 10000);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BannerImg.length)
+    }, 10000)
 
-    return () => clearInterval(interval);
-  }, [BannerImg]);
+    return () => clearInterval(interval)
+  }, [BannerImg])
 
   return (
-    <div className="carousel-container">
+    <div className='carousel-container'>
       <button
         onClick={() =>
           goToSlide(
             (currentImageIndex - 1 + BannerImg.length) % BannerImg.length
-          )
-        }
+          )}
       >
         Previous
       </button>
       <img
         src={BannerImg[currentImageIndex]}
         alt={`Slide ${currentImageIndex}`}
-        className="carousel-image"
+        className='carousel-image'
       />
       <button
         onClick={() => goToSlide((currentImageIndex + 1) % BannerImg.length)}
@@ -80,5 +80,5 @@ export function Carousel() {
         Next
       </button>
     </div>
-  );
+  )
 }
