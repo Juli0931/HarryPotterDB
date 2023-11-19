@@ -1,20 +1,14 @@
-import { Routes, Route } from 'react-router-dom'
-import { LoginPage } from './auth/pages/LoginPage'
-import { UserRoutes } from './user/routers/UserRoutes'
+import { Routes, Route } from "react-router-dom";
+import { LoginPage } from "./auth/pages/LoginPage";
+import { UserRoutes } from "./user/routers/UserRoute";
 
-export function AppRouter () {
+export function AppRouter() {
   return (
     <main>
       <Routes>
-        <Route
-          path='/'
-          element={<LoginPage />}
-        />
-        <Route
-          path='/*'
-          element={<UserRoutes />}
-        />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/*" element={<UserRoutes />} />
       </Routes>
     </main>
-  )
+  );
 }

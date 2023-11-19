@@ -18,6 +18,61 @@ export function ItemDetailPage() {
     navigate("/dashboard");
   };
 
+  const renderDetails = {
+    book: () => (
+      <div>
+        <p>
+          <strong>Title:</strong> {attributes.title}
+        </p>
+        <p>
+          <strong>Author:</strong> {attributes.author}
+        </p>
+        <p>
+          <strong>Pages:</strong> {attributes.pages}
+        </p>
+        <p>
+          <strong>Release Date:</strong> {attributes.release_date}
+        </p>
+        <p>
+          <strong>Dedication:</strong> {attributes.dedication}
+        </p>
+        <p>
+          <strong>Summary:</strong> {attributes.summary}
+        </p>
+        <div>
+          <strong>Chapters:</strong>
+          <ul>
+            {attributes.relationships?.chapters?.data.map((chapter, index) => (
+              <li key={index}>{chapter.id}</li>
+            ))}
+          </ul>
+        </div>
+        <a href={attributes.wiki} target="_blank" rel="noopener noreferrer">
+          Visit the fan Wiki here!
+        </a>
+      </div>
+    ),
+    movie: () => (
+      <div>
+        <p>
+          <strong>Directors:</strong> {attributes.directors.join(", ")}
+        </p>
+        <p>
+          <strong>Running Time:</strong> {attributes.running_time}
+        </p>
+        <p>
+          <strong>Release Date:</strong> {attributes.release_date}
+        </p>
+        <p>
+          <strong>Summary:</strong> {attributes.summary}
+        </p>
+        <a href={attributes.wiki} target="_blank" rel="noopener noreferrer">
+          Visit the fan Wiki here!
+        </a>
+      </div>
+    ),
+  };
+
   return (
     <div className="item-details">
       <h2>{attributes.title}</h2>
@@ -25,65 +80,8 @@ export function ItemDetailPage() {
         src={type === "book" ? attributes.cover : attributes.poster}
         alt={attributes.title}
       />
-      {type === "book" && (
-        <div>
-          <p>
-            <strong>Title:</strong> {attributes.title}
-          </p>
-          <p>
-            <strong>Author:</strong> {attributes.author}
-          </p>
-          <p>
-            <strong>Pages:</strong> {attributes.pages}
-          </p>
-          <p>
-            <strong>Release Date:</strong> {attributes.release_date}
-          </p>
-          <p>
-            <strong>Dedication:</strong> {attributes.dedication}
-          </p>
-          <p>
-            <strong>Summary:</strong> {attributes.summary}
-          </p>
-          <p>
-            <strong>Chapters:</strong>
-            <ul>
-              {attributes.relationships?.chapters?.data.map(
-                (chapter, index) => (
-                  <li key={index}>{chapter.id}</li>
-                )
-              )}
-            </ul>
-          </p>
-          <a href={attributes.wiki} target="_blank" rel="noopener noreferrer">
-            Visit the fan Wiki here!
-          </a>
-        </div>
-      )}
-      {type === "movie" && (
-        <div>
-          <p>
-            <strong>Directors:</strong> {attributes.directors.join(", ")}
-          </p>
-          <p>
-            <strong>Running Time:</strong> {attributes.running_time}
-          </p>
-          <p>
-            <strong>Release Date:</strong> {attributes.release_date}
-          </p>
-          <p>
-            <strong>Summary:</strong> {attributes.summary}
-          </p>
-          <a href={attributes.wiki} target="_blank" rel="noopener noreferrer">
-            More Info
-          </a>
-        </div>
-      )}
-      <Button
-        labelText="Go back"
-        type="button"
-        onClick={handleOnClick}
-      ></Button>
+      {renderDetails[type] ? renderDetails[type]() : null}
+      <button onClick={handleOnClick}>Go back</button>
     </div>
   );
 }

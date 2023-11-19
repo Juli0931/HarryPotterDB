@@ -1,10 +1,16 @@
-import { Form } from '../components'
-import './LoginPage.css'
-export function LoginPage () {
+import { Form } from "../components";
+import { AuthContextProvider } from "../context/AuthContextProvider";
+import "./LoginPage.css";
+
+export function LoginPage() {
   return (
-    <div className='LoginPage'>
-      <h2 className='TitlePage'>Welcome to <span>Hogwarts Connect</span></h2>
-      <Form />
-    </div>
-  )
+    <AuthContextProvider>
+      <div className="LoginPage">
+        <h2 className="TitlePage">
+          Welcome to <span>Hogwarts Connect</span>
+        </h2>
+        <Form />
+      </div>
+    </AuthContextProvider>
+  );
 }

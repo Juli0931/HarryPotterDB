@@ -1,33 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 import { Button } from "../Button/Button";
 import "./Form.css";
 
 export function Form() {
+  const navigate = useNavigate();
+
+  const { login, users } = useAuth();
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("Intended data:", formData);
+
+    const user = users.find(
+      (user) =>
+        user.username === formData.username &&
+        user.password === formData.password
+    );
+
+    if (user) {
+      console.log("Credenciales correctas");
+      login(user.username);
+      navigate("/dashboard");
+    } else {
+      console.log("Credenciales incorrectas");
+    }
+  };
+
+  const handleInputChange = ({ target }) => {
     setFormData({
       ...formData,
-      [name]: value,
+      [target.name]: target.value,
     });
-  }
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (event) => {
-    console.log("Enviando...")
-    event.preventDefault();
-    const { username, password } = formData;
-
-    console.log("Username:", username);
-    console.log("Password:", password);
-
-    navigate("/dashboard");
   };
 
   return (
@@ -56,7 +67,7 @@ export function Form() {
           />
         </div>
         <div>
-          <Button labelText="Log in" type="submit"/>
+          <Button labelText="Log in" type="submit" />
         </div>
       </form>
     </div>
