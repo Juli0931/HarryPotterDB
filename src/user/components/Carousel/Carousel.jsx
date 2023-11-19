@@ -1,47 +1,84 @@
-import { useState, useEffect } from 'react'
-// import MoviesCarousel from './src/assets/MoviesCarousel-wide.jpg'
-// import BooksCarousel from './src/assets/BooksCarousel.jpg'
+// const Carousel = ({ BannerImg }) => {
+//   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
-const Carousel = ({ BannerImg }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+//   const goToSlide = (index) => {
+//     setCurrentImageIndex(index)
+//   }
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BannerImg.length)
+//     }, 5000)
+
+//     return () => clearInterval(interval)
+//   }, [BannerImg])
+
+//   return (
+//     <div>
+//       <button onClick={() => goToSlide((currentImageIndex - 1 + BannerImg.length) % BannerImg.length)}>
+//         Previous
+//       </button>
+//       <img src={BannerImg[currentImageIndex]} alt={`Slide ${currentImageIndex}`} />
+//       <button onClick={() => goToSlide((currentImageIndex + 1) % BannerImg.length)}>
+//         Next
+//       </button>
+//     </div>
+//   )
+// }
+
+// export function ImgCarousel() {
+//   const BannerImg = [MoviesCarousel, BooksCarousel]
+
+//   return (
+//     <div>
+//       <Carousel BannerImg={BannerImg} />
+//     </div>
+//   )
+// }
+
+import { useState, useEffect } from "react";
+import MoviesCarousel from "../../../assets/MoviesCarousel.jpg";
+import BooksCarousel from "../../../assets/BooksCarousel.jpg";
+import "./Carousel.css";
+
+export function Carousel() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const BannerImg = [MoviesCarousel, BooksCarousel];
 
   const goToSlide = (index) => {
-    setCurrentImageIndex(index)
-  }
+    setCurrentImageIndex(index);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BannerImg.length)
-    }, 5000)
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % BannerImg.length);
+    }, 10000);
 
-    return () => clearInterval(interval)
-  }, [BannerImg])
+    return () => clearInterval(interval);
+  }, [BannerImg]);
 
   return (
-    <div>
-      <button onClick={() => goToSlide((currentImageIndex - 1 + BannerImg.length) % BannerImg.length)}>
+    <div className="carousel-container">
+      <button
+        onClick={() =>
+          goToSlide(
+            (currentImageIndex - 1 + BannerImg.length) % BannerImg.length
+          )
+        }
+      >
         Previous
       </button>
-      <img src={BannerImg[currentImageIndex]} alt={`Slide ${currentImageIndex}`} />
-      <button onClick={() => goToSlide((currentImageIndex + 1) % BannerImg.length)}>
+      <img
+        src={BannerImg[currentImageIndex]}
+        alt={`Slide ${currentImageIndex}`}
+        className="carousel-image"
+      />
+      <button
+        onClick={() => goToSlide((currentImageIndex + 1) % BannerImg.length)}
+      >
         Next
       </button>
     </div>
-  )
-}
-
-export function ImgCarousel () {
-  const BannerImg = [
-    // Agregar las imágenes
-    // <img key='movies' src={MoviesCarousel} alt='Hogwarts castle' />,
-    // <img key='books' src={BooksCarousel} alt='Harry Potter and the deathly hallows' />
-  ]
-  // <img src='../../assets/MoviesCarousel-wide.jpg' alt='Hogwarts castle' srcset='../../assets/MoviesCarousel-wide.jpg 640w' />
-  // <img src='../../assets/BooksCarousel-wide.jpg' alt='Harry Potter and the deathly hallows' srcset='../../assets/BooksCarousel-wide.jpg 640w' />
-
-  return (
-    <div>
-      <Carousel BannerImg={BannerImg} />
-    </div>
-  )
+  );
 }

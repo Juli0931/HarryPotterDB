@@ -1,10 +1,10 @@
-import { Filter, NavBar, ImgCarousel } from '../../components'
+import { Filter, NavBar, Carousel } from '../../components'
 
 export function DashboardPage () {
   return (
     <>
       <NavBar />
-      <ImgCarousel />
+      <Carousel />
       <Filter />
     </>
   )

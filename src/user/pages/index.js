@@ -1,2 +1,2 @@
 export * from './DashboardPage/DashboardPage'
-export * from './DetailPage/DetailPage'
+export * from './itemDetailPage/itemDetailPage'
