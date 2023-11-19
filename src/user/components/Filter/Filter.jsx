@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
+import './Filter.css'
 import { fetchData } from '../../services/fetchData.js'
+import { FaSearch } from 'react-icons/fa'
 
 export function Filter () {
   const [endpoint, setEndpoint] = useState('')
@@ -29,7 +31,7 @@ export function Filter () {
   }
 
   return (
-    <div>
+    <div className='filter-search'>
       <select id='selectInput' value={endpoint} onChange={handleSelectChange}>
         <option value=''>Select...</option>
         <option value='books'>Books</option>
@@ -42,6 +44,11 @@ export function Filter () {
         value={query}
         onChange={handlequeryChange}
       />
+      <div>
+        <button className='search-Btn'>
+          <FaSearch size='20' />
+        </button>
+      </div>
     </div>
   )
 }

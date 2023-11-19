@@ -38,7 +38,7 @@ export function Form () {
             type='text'
             id='username'
             name='username'
-            placeholder='Karol'
+            placeholder='e.g. Karol'
             value={formData.username}
             onChange={handleInputChange}
           />

@@ -1,0 +1,22 @@
+.search-Btn {
+    background-color: rgb(126, 117, 213);
+    color: rgb(255, 255, 255);
+    margin: 4px;
+    padding: 10px 16px;
+    border-radius: 30px;
+
+    &:hover {
+        background-color: rgb(73, 63, 164);
+        box-shadow: 0 0 10px rgba(157, 147, 240, 0.8);
+    }
+}
+
+.filter-search {
+    display: flex;
+
+    & input {
+        margin: 2px 8px;
+        padding: 0px 15px;
+        width: 20vw;
+    }
+}

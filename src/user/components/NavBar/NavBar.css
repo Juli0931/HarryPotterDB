@@ -2,7 +2,7 @@ nav {
     position: sticky;
     display: flex;
     justify-content: space-between;
-    padding: 25px 100px;
+    
     align-items: center;
     background-color: rgb(1, 7, 44); /*color provisional para maquetar*/
 
@@ -10,12 +10,71 @@ nav {
         border-radius: 100%;
         border: 2px solid;
         border-color: rgb(255, 255, 255);
+        margin: 2px;
     }
 
     & h1{
         font-family: 'Bluu Next', sans-serif;
-        font-size: 20px;
+        margin: 2px;
         color: rgb(255, 255, 255);
         letter-spacing: 1.3px;
+        text-align: left;
+    }
+}
+
+.menu-btn{
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width:300px) {
+    nav {
+    display: grid;
+    z-index: 1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    grid-template-columns: 30px 200px 50px;
+    grid-template-rows: var(--nav-v2-height);
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 10px 20px;
+    -webkit-transition: background-color 0.25s ease-out;
+    transition: background-color 0.25s ease-out;
+    background-color: rgb(1, 7, 44);
+    gap: 10px;
+    }
+
+    & img{
+        width: 38px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    nav {
+        display: grid;
+        z-index: 1;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        grid-template-columns: 30px 88% 50px;
+        grid-template-rows: var(--nav-v2-height);
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 25px 100px;
+        -webkit-transition: background-color 0.25s ease-out;
+        transition: background-color 0.25s ease-out;
+        background-color: rgb(1, 7, 44);
+        gap: 10px;
+    }
+    & h1 {
+        font-size: 20px;
+    }
+
+    & img{
+        width: 45px;
     }
 }

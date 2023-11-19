@@ -1,8 +1,14 @@
+form {
+    margin: 80px auto;
+}
+
 input {
     border: 1px solid rgba(255, 255, 255);
     border-radius: 50px;
     border-color: rgba(255, 255, 255, 0.6);
     background-color: rgba(73, 73, 73, 0.3);
+
+    display: block;
 
     &:focus {
         border: 1px solid rgb(126, 117, 213);
@@ -14,6 +20,11 @@ input {
     }
 }
 
+label {
+    display: block;
+    text-align: left;
+}
+
 .groupForm {
     display: flex;
     flex-direction: column;
@@ -23,9 +34,16 @@ input {
 
 @media screen and (min-width:300px) {
     .LoginPage {
+        & .groupForm{
+            margin: 15px;
+        }
         & input {
+            margin: 2px 8px;
+            padding: 12px;
+            width: 80vw;
+        }
+        & label {
             margin: 5px;
-            padding: 8px 10px;
             width: 80vw;
         }
     }
@@ -34,8 +52,13 @@ input {
 @media screen and (min-width:1024px) {
     .LoginPage {
         & input {
-            margin: 20px;
-            padding: 13px;
+            margin: 10px 5px;
+            padding: 12px;
+            width: 30vw;
+        }
+
+        & label {
+            margin: 2px;
             width: 30vw;
         }
     }
