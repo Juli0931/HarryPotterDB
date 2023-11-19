@@ -6,3 +6,7 @@
     font-family: "bluu-next";
     src: url("./assets/BluuNext-Bold.otf");
 }
+
+body{
+    background-color: rgb(16, 21, 27);
+}

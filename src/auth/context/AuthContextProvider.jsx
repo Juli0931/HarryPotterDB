@@ -1,31 +1,31 @@
-import { AuthContext } from "./AuthContext";
-import { useState } from "react";
+import { AuthContext } from './AuthContext'
+import { useState } from 'react'
 
-export function AuthContextProvider({ children }) {
-  const [isLogged, setIsLogged] = useState(false);
+export function AuthContextProvider ({ children }) {
+  const [isLogged, setIsLogged] = useState(false)
 
   const users = [
     {
-      username: "juliibc_",
-      password: "123456",
+      username: 'juliibc_',
+      password: '123456'
     },
     {
-      username: "Karolfc",
-      password: "Contraseña",
+      username: 'Karolfc',
+      password: 'Contraseña'
     },
     {
-      username: "Test",
-      password: "123",
-    },
-  ];
+      username: 'Test',
+      password: '123'
+    }
+  ]
 
   const contextValue = {
     isLogged,
     setIsLogged,
     users
-  };
+  }
 
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
-  );
+  )
 }

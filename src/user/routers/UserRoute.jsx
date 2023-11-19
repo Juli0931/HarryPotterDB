@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import { DashboardPage, ItemDetailPage } from "../pages";
-import { PrivateRoute } from "./PrivateRoute";
+import { UserContextProvider } from '../context/UserContextProvider'; 
+// import { PrivateRoute } from "./PrivateRoute";
 
-export function UserRoutes() {
+export function UserRoutes(){
   return (
-    <main>
+    <UserContextProvider>
+      <main>
       <Routes>
         <Route
           path="/dashboard"
@@ -24,5 +26,6 @@ export function UserRoutes() {
         />
       </Routes>
     </main>
+    </UserContextProvider>
   );
 }
