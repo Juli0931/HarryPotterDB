@@ -1,28 +1,28 @@
-import { useLocation, useNavigate } from 'react-router-dom'
-import { NavBar } from '../../components'
-import './itemDetailPage.css'
+import { useLocation, useNavigate } from "react-router-dom";
+import { NavBar } from "../../components";
+import "./itemDetailPage.css";
 
-export function ItemDetailPage () {
-  const location = useLocation()
-  const navigate = useNavigate()
+export function ItemDetailPage() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const { state } = location
+  const { state } = location;
 
   if (!state || !state.item) {
-    return <div>No item selected</div>
+    return <div>No item selected</div>;
   }
 
-  const { type, attributes } = state.item
+  const { type, attributes } = state.item;
 
   const handleOnClick = () => {
-    console.log('Go back')
-    navigate('/dashboard')
-  }
+    console.log("Go back");
+    navigate("/dashboard");
+  };
 
   const renderDetails = {
     book: () => (
-      <div className='book-detail'>
-        <p className='detail-title'>
+      <div className="book-detail">
+        <p className="detail-title">
           <strong>{attributes.title}</strong>
         </p>
         <p>
@@ -40,18 +40,23 @@ export function ItemDetailPage () {
         <p>
           <strong>Summary:</strong> {attributes.summary}
         </p>
-        <a className='visit-link' href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
+        <a
+          className="visit-link"
+          href={attributes.wiki}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Visit the fan Wiki here!
         </a>
       </div>
     ),
     movie: () => (
-      <div className='movie-detail'>
-        <p className='detail-title'>
+      <div className="movie-detail">
+        <p className="detail-title">
           <strong>{attributes.title}</strong>
         </p>
         <p>
-          <strong>Directors:</strong> {attributes.directors.join(', ')}
+          <strong>Directors:</strong> {attributes.directors.join(", ")}
         </p>
         <p>
           <strong>Duration:</strong> {attributes.running_time}
@@ -62,21 +67,26 @@ export function ItemDetailPage () {
         <p>
           <strong>Summary:</strong> {attributes.summary}
         </p>
-        <a className='visit-link' href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
+        <a
+          className="visit-link"
+          href={attributes.wiki}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Visit the fan Wiki here!
         </a>
       </div>
-    )
-  }
+    ),
+  };
 
   return (
     <>
       <NavBar />
-      <div className='item-details'>
+      <div className="item-details">
         <img
-          src={type === 'book' ? attributes.cover : attributes.poster}
+          src={type === "book" ? attributes.cover : attributes.poster}
           alt={attributes.title}
-          className={type === 'book' ? 'bookImg' : 'movieImg'}
+          className={type === "book" ? "bookImg" : "movieImg"}
         />
         <div>
           {renderDetails[type] ? renderDetails[type]() : null}
@@ -84,5 +94,5 @@ export function ItemDetailPage () {
         </div>
       </div>
     </>
-  )
+  );
 }

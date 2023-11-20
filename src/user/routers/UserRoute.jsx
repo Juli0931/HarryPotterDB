@@ -1,31 +1,31 @@
-import { Routes, Route } from 'react-router-dom'
-import { DashboardPage, ItemDetailPage } from '../pages'
-import { UserContextProvider } from '../context/UserContextProvider'
+import { Routes, Route } from "react-router-dom";
+import { DashboardPage, ItemDetailPage } from "../pages";
+import { UserContextProvider } from "../context/UserContextProvider";
 // import { PrivateRoute } from "./PrivateRoute";
 
-export function UserRoutes () {
+export function UserRoutes() {
   return (
     <UserContextProvider>
       <main>
         <Routes>
           <Route
-            path='/dashboard'
+            path="/dashboard"
             element={
-            // <PrivateRoute>
+              // <PrivateRoute>
               <DashboardPage />
-            // </PrivateRoute>
-          }
+              // </PrivateRoute>
+            }
           />
           <Route
-            path='/detail'
+            path="/detail"
             element={
-            // <PrivateRoute>
+              // <PrivateRoute>
               <ItemDetailPage />
-            // </PrivateRoute>
-          }
+              // </PrivateRoute>
+            }
           />
         </Routes>
       </main>
     </UserContextProvider>
-  )
+  );
 }

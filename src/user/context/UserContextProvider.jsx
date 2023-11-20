@@ -1,9 +1,9 @@
-import { UserContext } from './UserContext';
-import { useState } from 'react';
+import { UserContext } from "./UserContext";
+import { useState } from "react";
 
 export function UserContextProvider({ children }) {
-  const [endpoint, setEndpoint] = useState('');
-  const [query, setQuery] = useState('');
+  const [endpoint, setEndpoint] = useState("");
+  const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
   const contextValue = {
@@ -12,12 +12,10 @@ export function UserContextProvider({ children }) {
     query,
     setQuery,
     results,
-    setResults
+    setResults,
   };
 
   return (
-    <UserContext.Provider value={contextValue}>
-      {children}
-    </UserContext.Provider>
+    <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
   );
 }

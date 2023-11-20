@@ -1,65 +1,65 @@
 form {
-    margin: 80px auto;
+  margin: 80px auto;
 }
 
 input {
-    border: 1px solid rgba(255, 255, 255);
-    border-radius: 50px;
-    border-color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(73, 73, 73, 0.3);
+  border: 1px solid rgba(255, 255, 255);
+  border-radius: 50px;
+  border-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(73, 73, 73, 0.3);
 
-    display: block;
+  display: block;
 
-    &:focus {
-        border: 1px solid rgb(126, 117, 213);
-        background-color: rgba(126, 117, 213, 0.2);
-        box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(107, 99, 181, 0.6);
-        outline: 0 none;
-        transition: 90ms;
-        transition-timing-function: ease-in;
-    }
+  &:focus {
+    border: 1px solid rgb(126, 117, 213);
+    background-color: rgba(126, 117, 213, 0.2);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
+      0 0 8px rgba(107, 99, 181, 0.6);
+    outline: 0 none;
+    transition: 90ms;
+    transition-timing-function: ease-in;
+  }
 }
 
 label {
-    display: block;
-    text-align: left;
+  display: block;
+  text-align: left;
 }
 
 .groupForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-
-@media screen and (min-width:300px) {
-    .LoginPage {
-        & .groupForm{
-            margin: 15px;
-        }
-        & input {
-            margin: 2px 8px;
-            padding: 12px;
-            width: 80vw;
-        }
-        & label {
-            margin: 5px;
-            width: 80vw;
-        }
+@media screen and (min-width: 300px) {
+  .LoginPage {
+    & .groupForm {
+      margin: 15px;
     }
+    & input {
+      margin: 2px 8px;
+      padding: 12px;
+      width: 80vw;
+    }
+    & label {
+      margin: 5px;
+      width: 80vw;
+    }
+  }
 }
 
-@media screen and (min-width:1024px) {
-    .LoginPage {
-        & input {
-            margin: 10px 5px;
-            padding: 12px;
-            width: 30vw;
-        }
-
-        & label {
-            margin: 2px;
-            width: 30vw;
-        }
+@media screen and (min-width: 1024px) {
+  .LoginPage {
+    & input {
+      margin: 10px 5px;
+      padding: 12px;
+      width: 30vw;
     }
+
+    & label {
+      margin: 2px;
+      width: 30vw;
+    }
+  }
 }

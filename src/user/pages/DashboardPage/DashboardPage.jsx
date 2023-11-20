@@ -1,6 +1,6 @@
-import { NavBar, Carousel, Filter } from '../../components'
+import { NavBar, Carousel, Filter } from "../../components";
 
-export function DashboardPage () {
+export function DashboardPage() {
   return (
     <>
       <NavBar />
@@ -9,5 +9,5 @@ export function DashboardPage () {
         <Filter />
       </div>
     </>
-  )
+  );
 }
