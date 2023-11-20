@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import { Button } from '../Button/Button'
+import Swal from 'sweetalert2'
 import './Form.css'
 
 export function Form () {
@@ -30,7 +31,12 @@ export function Form () {
       login(user.username)
       navigate('/dashboard')
     } else {
-      console.log('Credenciales incorrectas')
+      Swal.fire({
+        title: 'Oh no!',
+        html: 'Looks like something is wrong with your credentials.<br/>Try again!',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
     }
   }
 

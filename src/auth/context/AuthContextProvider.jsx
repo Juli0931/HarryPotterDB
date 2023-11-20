@@ -6,7 +6,7 @@ export function AuthContextProvider ({ children }) {
 
   const users = [
     {
-      username: 'juliibc_',
+      username: 'Juliibc_',
       password: '123456'
     },
     {

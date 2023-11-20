@@ -40,7 +40,7 @@ export function ItemDetailPage () {
         <p>
           <strong>Summary:</strong> {attributes.summary}
         </p>
-        <a href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
+        <a className='visit-link' href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
           Visit the fan Wiki here!
         </a>
       </div>
@@ -62,7 +62,7 @@ export function ItemDetailPage () {
         <p>
           <strong>Summary:</strong> {attributes.summary}
         </p>
-        <a href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
+        <a className='visit-link' href={attributes.wiki} target='_blank' rel='noopener noreferrer'>
           Visit the fan Wiki here!
         </a>
       </div>
@@ -76,9 +76,12 @@ export function ItemDetailPage () {
         <img
           src={type === 'book' ? attributes.cover : attributes.poster}
           alt={attributes.title}
+          className={type === 'book' ? 'bookImg' : 'movieImg'}
         />
-        {renderDetails[type] ? renderDetails[type]() : null}
-        <button onClick={handleOnClick}>Go back</button>
+        <div>
+          {renderDetails[type] ? renderDetails[type]() : null}
+          <button onClick={handleOnClick}>❮ Go back</button>
+        </div>
       </div>
     </>
   )

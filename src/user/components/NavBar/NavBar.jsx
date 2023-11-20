@@ -5,6 +5,7 @@ import './NavBar.css'
 
 export function NavBar () {
   const [showDropdown, setShowDropdown] = useState(false)
+
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -24,7 +25,7 @@ export function NavBar () {
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >
-        <img src='./src/assets/userPhoto.jpg' width='38px' alt='User profile' />
+        <img src='./src/assets/userPhotoJuli.jpg' width='38px' alt='User profile' />
         {showDropdown && (
           <div className='dropdown-menu'>
             <button className='dropdown-btn'>Profile</button>

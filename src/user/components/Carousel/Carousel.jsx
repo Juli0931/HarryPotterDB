@@ -24,7 +24,7 @@ export function Carousel () {
         alt={`Slide ${currentImageIndex}`}
         className='carousel-image'
       />
-      <div class='gradient-overlay' />
+      <div className='gradient-overlay' />
     </div>
   )
 }

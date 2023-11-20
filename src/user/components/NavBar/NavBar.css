@@ -1,4 +1,5 @@
 nav {
+    z-index: 30;
     position: fixed;
     margin-top: 0;
     display: flex;
@@ -6,7 +7,7 @@ nav {
     align-items: center;
     /* background-color: rgb(1, 7, 44); color provisional para maquetar */
 
-    & img{
+    & img {
         border-radius: 100%;
         border: 2px solid;
         border-color: rgb(255, 255, 255);
@@ -14,7 +15,7 @@ nav {
         margin: 2px;
     }
 
-    & h1{
+    & h1 {
         font-family: 'Bluu Next', sans-serif;
         margin: 2px;
         color: rgb(255, 255, 255);
@@ -23,15 +24,29 @@ nav {
         text-align: left;
     }
 
-    & .dropdown-menu{
+    & .dropdown-menu {
+        position: absolute;
         background-color: rgba(255, 255, 255, 0.8);
-        width: 100px;
-        padding: 5px;
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+        width: 120px;
+        padding: 4px 2px;
         border-radius: 5px;
+        margin-left: -30px;
+
+        & button {
+            color: rgb(73, 63, 164);
+            width: 100%;
+            height: 100%;
+
+            &:hover {
+                background-color: rgb(126, 117, 213);
+                color: rgb(255, 255, 255);
+            }
+        }
     }
 }
 
-.menu-btn{
+.menu-btn {
     color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -39,24 +54,23 @@ nav {
 
 @media screen and (min-width:300px) {
     nav {
-    display: grid;
-    z-index: 1;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    grid-template-columns: 30px 200px 50px;
-    grid-template-rows: var(--nav-v2-height);
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    padding: 10px 20px;
-    -webkit-transition: background-color 0.25s ease-out;
-    transition: background-color 0.25s ease-out;
-    background-color: rgba(1, 7, 44, 0.4);
-    gap: 10px;
+        display: grid;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        grid-template-columns: 30px 200px 50px;
+        grid-template-rows: var(--nav-v2-height);
+        -ms-flex-align: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        padding: 10px 20px;
+        -webkit-transition: background-color 0.25s ease-out;
+        transition: background-color 0.25s ease-out;
+        background-color: rgba(1, 7, 44, 0.4);
+        gap: 10px;
     }
 
-    & img{
+    & img {
         width: 38px;
     }
 }
@@ -64,7 +78,6 @@ nav {
 @media screen and (min-width:1024px) {
     nav {
         display: grid;
-        z-index: 1;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         grid-template-columns: 30px 88% 50px;
@@ -80,11 +93,12 @@ nav {
         /* background-color: rgb(1, 7, 44); */
         gap: 10px;
     }
+
     & h1 {
         font-size: 20px;
     }
 
-    & img{
+    & img {
         width: 45px;
     }
 }
